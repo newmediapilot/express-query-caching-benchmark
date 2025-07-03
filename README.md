@@ -1,4 +1,4 @@
-`express-quer-caching-benchmark`
+# express-query-caching-benchmark
 
 - Testing the effects of minimal query caching `express`
 - Barebones measurement using `timer()`
