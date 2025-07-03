@@ -1,0 +1,17 @@
+{
+  "name": "express-query-caching-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "http-server": "^14.1.1",
+    "json-server": "^1.0.0-beta.3"
+  }
+}
