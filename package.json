@@ -10,6 +10,7 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "apicache": "^1.6.3",
     "express": "^5.1.0",
     "http-server": "^14.1.1",
     "json-server": "^1.0.0-beta.3"

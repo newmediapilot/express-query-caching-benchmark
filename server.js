@@ -1,22 +1,14 @@
 import express from 'express'
-import cors from 'express'
+import apicache from 'apicache'
 
 const app = express()
 const port = 3001
+let cache = apicache.middleware
 
-app.use(cors())
-
-const cached = {}
-
-app.get('/cached/:id', async ({params: {id}}, res) => {
+app.get('/cached/:id', cache('5 minutes'), async ({params: {id}}, res) => {
     const path = `http://localhost:3000/data/${id}`;
-    if (!!cached[path]) {
-        res.send(cached[path])
-    } else {
-        const response = await fetch(path);
-        cached[path] = await response.json();
-        res.send(cached[path]);
-    }
+    const response = await fetch(path);
+    res.send(await response.json());
 })
 
 app.get('/uncached/:id', async ({params: {id}}, res) => {
